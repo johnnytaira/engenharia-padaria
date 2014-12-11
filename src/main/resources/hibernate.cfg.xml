@@ -27,6 +27,7 @@
     <!-- mapeamento das classes a serem persistidas -->
     <mapping class="br.com.padaria.model.Produto"/>
     <mapping class="br.com.padaria.model.Usuario"/>
+    <mapping class="br.com.padaria.model.Promocao"/>
     
   </session-factory>
   

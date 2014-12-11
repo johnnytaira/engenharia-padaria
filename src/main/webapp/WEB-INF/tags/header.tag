@@ -5,7 +5,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Biblioteca</title>
+	<title>Administrador</title>
 	<link rel="stylesheet" href="<c:url value="/css/view.css" />">
 	<!--  <script type="text/javascript" src="/js/view.js"></script>-->
 </head>

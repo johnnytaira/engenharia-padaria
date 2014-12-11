@@ -16,6 +16,8 @@ public class Produto {
 	private Double preco;
 	private Integer quantidade;
 	@Enumerated(EnumType.STRING)
+	private Medida medida;
+	@Enumerated(EnumType.STRING)
 	private CategoriaProduto categoria;
 	
 	
@@ -60,6 +62,14 @@ public class Produto {
 	}
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
+	}
+	
+	public Medida getMedida(){
+		return this.medida;
+	}
+	
+	public void setMedida(Medida medida){
+		this.medida = medida;
 	}
 	
 	

@@ -30,8 +30,8 @@ public class IndexController {
 		//result.redirectTo(UsuarioController.class).login(email, senha);
 	}
 	
-	@Path("/hello")
-	public void hello(){
+	@Path("/menuAdmistrador")
+	public void indexAdministrador(){
 		
 	}
 }

@@ -29,6 +29,7 @@ body
 	margin:0 auto;
 	text-align:left;
 	width:640px;
+	
 }
 
 #top
@@ -66,14 +67,14 @@ body
 
 form.appnitro
 {
-	margin:20px 20px 0;
+	margin:20px 20px 0px;
 	padding:0 0 20px;
 }
 
 /**** Logo Section  *****/
 h1
 {
-	background-color:#D34A2D;
+	background-color:#F16355;
 	margin:10px 0px 0px 0px;
 	min-height:10;
 	padding:10px;
@@ -101,6 +102,29 @@ img
 {
 	behavior:url(css/iepngfix.htc);
 	border:none;
+	margin-top: 60px;
+    margin-bottom: 100px;
+    margin-right: 80px;
+    margin-left: 80px;
+}
+
+p.administrador{
+	margin-top: 60px;
+    margin-bottom: 100px;
+    margin-right: 80px;
+    margin-left: 80px;
+}
+
+
+img.circleimg
+{
+	behavior:url(css/iepngfix.htc);
+	border:none;
+	
+    margin-right: 80px;
+    margin-left: 80px;
+    -webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
 }
 
 
