@@ -28,7 +28,7 @@
         <td>${produto.nome }</td>
         <td>${produto.descricao }</td>
         <td>${produto.quantidade }</td>
-        <td>R$ ${produto.preco }0</td>
+        <td><span id="advanced">${produto.preco }</span></td>
          <td><a href="editaProduto?id=${produto.id }" >Editar</a></td>
          <td><a href="removeProduto?id=${produto.id }" onclick="return confirm('Ce tem ctz tio?')">Remover</a></td>
       </tr>          
@@ -38,6 +38,20 @@
 <br><br><br>
 <a href="menuAdmistrador">Clique aqui</a> para voltar à página principal
 </div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src=<c:url value="/js/jquery.currency.js" />></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#basic').currency();
+        $('#input').currency();
+        $('#advanced').currency({ region: 'BRL', thousands: '', decimal: ',', decimals: 2 });
+        $('.multiple').currency();
+        $('#convert').currency({ region: 'GBP', convertFrom: 'USD', convertLocation: '../convert.php' });
+        $('#invalid').currency();
+    });
+    </script>
 
 </body>
 </html>
