@@ -20,8 +20,16 @@ public class Produto {
 	@Enumerated(EnumType.STRING)
 	private CategoriaProduto categoria;
 	
+	private byte[] imagem;
 	
-	
+	public byte[] getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(byte[] imagem) {
+		this.imagem = imagem;
+	}
+
 	public Integer getId(){
 		return id;
 	}

@@ -1,5 +1,8 @@
 package br.com.caelum.vraptor.padaria;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -38,9 +41,10 @@ public class ProdutoController {
 	}
 	
 	@Path("/cadastra-produto")
-	public void cadastra(String nome, String descricao, String preco, String quantidade,String medida,  String categoria){
+	public void cadastra(String foto, String nome, String descricao, String preco, String quantidade,String medida,  String categoria){
 		System.out.println(nome);
 		Produto produto = new Produto();
+		leImagem(foto, produto);
 		produto.setNome(nome);
 		produto.setDescricao(descricao);
 		produto.setPreco(Double.parseDouble(preco));
@@ -49,6 +53,21 @@ public class ProdutoController {
 		produto.setCategoria(CategoriaProduto.valueOf(categoria));
 		produtoDao.salva(produto);
 		result.redirectTo(ProdutoController.class).lista();
+	}
+	
+	private void leImagem(String foto, Produto produto){
+		//zona perigosa. muita gambiarra.
+		File file = new File("C:/Users/Johnny Taira/Desktop/Uploads/" +foto);
+		byte[] byteFile = new byte[(int) file.length()];
+		try{
+			FileInputStream fileInputStream = new FileInputStream(file);
+			fileInputStream.read(byteFile);
+			fileInputStream.close();
+		}catch(IOException e){
+			
+		}
+		
+		produto.setImagem(byteFile);
 	}
 	
 	@Path("/editaProduto")

@@ -17,6 +17,10 @@
 			<br>
 			<input id="nome" type="text" name = "nome"/>
 			<br><br>
+			<label for="foto">Foto:</label>
+			<br>
+			<input id="foto" type="file" name="foto"/>
+			<br><br>
 			<label for="preco">Preço (R$):</label>
 			<br>
      		<input id="preco" type="text" onkeypress="return numbersonly(event)" name="preco"/>
