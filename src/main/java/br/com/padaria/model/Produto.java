@@ -20,13 +20,14 @@ public class Produto {
 	@Enumerated(EnumType.STRING)
 	private CategoriaProduto categoria;
 	
-	private byte[] imagem;
+	//armazena somente a url da img
+	private String imagem;
 	
-	public byte[] getImagem() {
+	public String getImagem() {
 		return imagem;
 	}
 
-	public void setImagem(byte[] imagem) {
+	public void setImagem(String imagem) {
 		this.imagem = imagem;
 	}
 

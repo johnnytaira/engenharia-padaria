@@ -37,7 +37,7 @@ public class UsuarioController {
 		
 	}
 	
-	@Path("/")
+	@Path("/login")
 	public void login(String email, String senha){
 		
 		
@@ -46,15 +46,6 @@ public class UsuarioController {
 		}else if (email!= null || senha !=null){
 			result.redirectTo(UsuarioController.class).fail();
 		}
-		
-		
-//		if (usuarioDao.usuarioLogado(email, senha)){
-//			validator.add(new SimpleMessage("Login já existe", "email"));
-//		}
-//		
-//		validator.onErrorRedirectTo(UsuarioController.class).fail();
-//		
-//		result.redirectTo(ProdutoController.class).formulario();
 		
 	}
 }

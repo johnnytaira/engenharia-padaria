@@ -2,9 +2,12 @@ package br.com.padaria.dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
+import br.com.padaria.model.CategoriaProduto;
 import br.com.padaria.model.Produto;
 import br.com.padaria.util.FabricaSession;
 
@@ -19,6 +22,12 @@ public class ProdutoDao {
 	
 	public List<Produto> listaProduto(){
 		return session.createCriteria(Produto.class).list();
+	}
+	
+	public List<Produto> listaProdutoPorCategoria(CategoriaProduto categoriaProduto){
+		Criteria criteria = session.createCriteria(Produto.class);
+		criteria.add(Restrictions.like("categoria", categoriaProduto));
+		return criteria.list();
 	}
 	
 	public Produto getById(Integer id){
