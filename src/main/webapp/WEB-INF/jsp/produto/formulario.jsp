@@ -4,18 +4,42 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<tags:header/>
+<head>
+	<meta charset="UTF-8">
+	<title>Administrador</title>
+	<link rel="stylesheet" href="<c:url value="/css/view.css" />">
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript" src="js/dist/jquery.validate.js"></script>
+	
+	<script type="text/javascript">
+		function numbersonly(e){
+		var unicode=e.charCode? e.charCode : e.keyCode
+		if (unicode!=8 && unicode!=46){ //if the key isn't the backspace key (which we should allow)
+			if (unicode<48||unicode>57) //if not a number
+				return false //disable key press
+			}
+		}
+	</script>
+		
+	<script type="text/javascript">
+		
+			$("#produtosForm").validate();
+
+	</script>
+	
+</head>
+
 <body>
  
  	<div id="form_container">
  	<h1>Cadastrar Produtos</h1>
-	<form action="cadastra-produto" method="POST">
+	<form action="cadastra-produto" method="POST" id="produtosForm">
 	
 		<fieldset>
 
 			<label for="nome">Nome: </label>
 			<br>
-			<input id="nome" type="text" name = "nome"/>
+			<input id="nome" type="text" name = "nome" required/>
 			<br><br>
 			<label for="foto">Foto:</label>
 			<br>
@@ -27,7 +51,8 @@
      		<br><br>
      		<label for="quantidade">Quantidade em estoque: </label>
      		<br>
-     		<input  id="quantidade" type="number" min="1" max="1000" name="quantidade"/>
+     		<input  id="quantidade" onkeypress="return numbersonly(event)" 
+     			type="number" min="1" max="1000" name="quantidade"/>
      		<select class = "element select medium" id="element_5" name="medida">
      		<!-- KG, LITRO, UNIDADE, BANDEIJA; -->
      			<option value="KG">Kg.</option>
@@ -38,7 +63,7 @@
      		<br><br>
      		<label for="descricao">Descrição: </label>
 			<br>
-			<textarea id="descricao" name ="descricao"></textarea>
+			<textarea id="descricao" name ="descricao" maxlength="140"></textarea>
 			<br><br>
      		<label for="categoria">Categoria: </label>
      		<br>
@@ -57,16 +82,6 @@
 		</form>
 
 	</div>
-	
-		<script type="text/javascript">
-			function numbersonly(e){
-			var unicode=e.charCode? e.charCode : e.keyCode
-			if (unicode!=8 && unicode!=46){ //if the key isn't the backspace key (which we should allow)
-				if (unicode<48||unicode>57) //if not a number
-					return false //disable key press
-				}
-			}
-		</script>
-
+		
 </body>
 </html>

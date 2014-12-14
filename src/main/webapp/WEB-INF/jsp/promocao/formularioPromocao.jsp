@@ -14,15 +14,23 @@
 
 	<form action="cadastra-promocao" method="POST">
 	
+	<c:set var="nome"/>
 		<fieldset>
 
 			<label for="idProduto">Código do Produto: </label>
 			<br>
-			<select id="idProduto" action="cadastra-promocao">
 			
-			</select>
+				<select id="idProduto">
+					<c:forEach items="${produtos}" var="produto">
+						<option value="<c:url value="${produto.id }"/>">${produto.id }</option>
+						<c:set var="nome" value="${produto}"/>
+					</c:forEach>
+				</select>
 			
-			<br><br>
+			
+			<br>
+			<label for="nomeProduto">${nome }</label>
+			 
 			
 			<label for="novoValor">Novo Valor: </label>
 			<br>

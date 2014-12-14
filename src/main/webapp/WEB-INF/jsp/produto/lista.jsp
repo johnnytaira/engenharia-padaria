@@ -18,7 +18,6 @@
       <th>Nome</th>
       <th>Descrição</th>
       <th>Quantidade</th>
-      <th>imagem</th>
       <th>Preço</th>
     </tr>
   </thead>
@@ -29,7 +28,6 @@
         <td>${produto.nome }</td>
         <td>${produto.descricao }</td>
         <td>${produto.quantidade }</td>
-        <td><img src="<c:url value="${produto.imagem }"/>" ></td>
         <td>${produto.preco }</td>
          <td><a href="editaProduto?id=${produto.id }" >Editar</a></td>
          <td><a href="removeProduto?id=${produto.id }" onclick="return confirm('Você realmente deseja remover o produto?')">Remover</a></td>

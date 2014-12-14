@@ -120,9 +120,6 @@ img.circleimg
 {
 	behavior:url(css/iepngfix.htc);
 	border:none;
-	
-    margin-right: 80px;
-    margin-left: 80px;
     -webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 }
@@ -905,5 +902,13 @@ border-top: 1px solid #999;
 border-bottom: 1px solid #999;
 background: #dedede;
 font-weight: bold;
+}
+
+.span_2_of_2 {
+	width: 100%;
+}
+
+.span_1_of_2 {
+	width: 49.2%;
 }
 

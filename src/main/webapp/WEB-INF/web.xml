@@ -17,7 +17,17 @@
         <url-pattern>/*</url-pattern>  
         <dispatcher>FORWARD</dispatcher>  
         <dispatcher>REQUEST</dispatcher>  
-    </filter-mapping>  
+    </filter-mapping> 
+    
+   <mime-mapping>
+        <extension>otf</extension>
+        <mime-type>font/otf</mime-type>
+    </mime-mapping>
+    
+    <mime-mapping>
+        <extension>ttf</extension>
+        <mime-type>font/ttf</mime-type>
+    </mime-mapping>
     
   <listener>
     <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>

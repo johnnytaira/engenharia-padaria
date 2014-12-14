@@ -37,7 +37,8 @@ public class PromocaoController {
 	
 	@Path("/formulario-promocao")
 	public void formularioPromocao(){
-		
+		ProdutoDao produtoDao = new ProdutoDao();
+		result.include("produtos", produtoDao.listaProduto());
 	}
 	
 	@Path("/cadastra-promocao")
@@ -45,6 +46,7 @@ public class PromocaoController {
 		//FIXME tratamento caso produto seja nulo
 		
 		ProdutoDao produtoDao = new ProdutoDao();
+		result.include("produtos", produtoDao.listaProduto());
 		Produto produto = produtoDao.getById(Integer.parseInt(idProduto));
 		if (produto == null){
 			validator.add(new SimpleMessage("Produto Inexistente", "produto"));

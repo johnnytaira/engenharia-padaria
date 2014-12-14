@@ -15,7 +15,7 @@
     font-size:3em;
 	margin-bottom:15px;
 	margin-top: 15px;
-    font-family: 'Aller_Bd';
+    font-family: 'Aller Bold';
     text-align: center;
     }    
   
