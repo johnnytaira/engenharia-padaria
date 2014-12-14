@@ -43,16 +43,13 @@
      		<label for="categoria">Categoria: </label>
      		<br>
      		<select class = "element select medium" id="element_5" name="categoria">
-     		<!-- PAES, DOCES, SALGADOS, ALMOCO, JANTA, BOLOS, BEBIDAS, FRIOS, MERCEARIA; -->
+     		<!-- PAES, LANCHES, SALGADOS, DOCES, BOLOS, CUPCAKES;; -->
      			<option value="PAES">Pães</option>
      			<option value="DOCES">Doces</option>
      			<option value="SALGADOS">Salgados</option>
-     			<option value="ALMOCO">Almoço</option>
-     			<option value="JANTA">Janta</option>
+     			<option value="LANCHES">Lanches</option>
      			<option value="BOLOS">Bolos</option>
-     			<option value="BEBIDAS">Bebidas</option>
-     			<option value="FRIOS">Frios</option>
-     			<option value="MERCEARIA">Mercearia</option>
+     			<option value="CUPCAKES">Cupcakes</option>
      		</select>
      		<br><br>
      		<button type="submit">Enviar</button>	
