@@ -23,6 +23,7 @@ public class Promocao {
 	@Id @GeneratedValue
 	private Integer id;
 	
+
 	@OneToOne 
 	@JoinColumn(name="PRODUTO_ID")
 	private Produto produto;
@@ -35,6 +36,14 @@ public class Promocao {
 
 	public Promocao(){
 		
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
 	public DateTime getValidoAte() {

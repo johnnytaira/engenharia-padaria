@@ -1,6 +1,5 @@
 package br.com.caelum.vraptor.padaria;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -59,24 +58,23 @@ public class PromocaoController {
 		promocao.setNovoValor(Double.parseDouble(novoValor));
 		promocao.setValidoAte(new DateTime(validoAte));
 		promocaoDao.salva(promocao);
-		result.redirectTo(ProdutoController.class).lista();
+		result.redirectTo(PromocaoController.class).listaPromocoes();
 	}
 	
 	//mudar a path
-	@Path("/deleta-promocao")
+	@Path("/remove-promocao")
 	public void deleta(Integer id){
 		Promocao promocao = promocaoDao.getById(id);
+		Produto produto = promocao.getProduto();
+		produto.setPreco(promocao.getValorAntigo());
+		new ProdutoDao().edita(produto);
 		promocaoDao.remove(promocao);
+		result.redirectTo(this).listaPromocoes();
 	}
 	@Path("/lista-promocoes")
 	public void listaPromocoes(){
 		List<Promocao> listPromocoes= promocaoDao.lista();
-		List<Integer> ids = new ArrayList<Integer>();
-		for(Promocao promocao: listPromocoes){
-			ids.add(promocao.getProduto().getId());
-			
-		}
-		result.include("produtosId", ids);
+		result.include("promocoes", listPromocoes);
 	}
 
 }

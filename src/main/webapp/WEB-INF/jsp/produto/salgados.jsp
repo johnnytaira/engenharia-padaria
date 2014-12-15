@@ -48,23 +48,23 @@ h2 {
 	</div>
 	<!---start-content-->
 	<div class="bla">
-		<h2>Bolos</h2>
+		<h2>Salgados</h2>
 		<div class="items_desc">
 			<div class="wrap">
 
-				<c:forEach items="${partition}" var="bolos">
+				<c:forEach items="${partition}" var="salgados">
 
 
 					<div class="section group">
-						<c:forEach items="${bolos}" var="bolo">
+						<c:forEach items="${salgados}" var="salgado">
 							<div class="listview_1_of_2 images_1_of_2">
 								<div class="listimg listimg_2_of_1">
-									<a href="#"><img src="<c:url value="${bolo.imagem }"/>"
-										alt="" /><span> R$${bolo.preco }/kg</span></a>
+									<a href="#"><img src="<c:url value="${salgado.imagem }"/>"
+										alt="" /><span> R$${salgado.preco }/kg</span></a>
 								</div>
 								<div class="text list_2_of_1">
-									<h3>${bolo.nome}</h3>
-									<p>${bolo.descricao }</p>
+									<h3>${salgado.nome}</h3>
+									<p>${salgado.descricao }</p>
 								</div>
 							</div>
 						</c:forEach>

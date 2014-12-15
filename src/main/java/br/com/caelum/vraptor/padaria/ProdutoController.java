@@ -51,8 +51,44 @@ public class ProdutoController {
 		result.include("partition", partition);
 	}
 	
+	@Path("/paes")
 	public void paes(){
-		
+		List<Produto> paes= produtoDao.listaProdutoPorCategoria(CategoriaProduto.PAES);
+		List<List<Produto>> partition = Lists.partition(paes, 2);
+		result.include("partition", partition);
+
+	}
+	
+	@Path("/salgados")
+	public void salgados(){
+		List<Produto> paes= produtoDao.listaProdutoPorCategoria(CategoriaProduto.SALGADOS);
+		List<List<Produto>> partition = Lists.partition(paes, 2);
+		result.include("partition", partition);
+
+	}
+	
+	@Path("/doces")
+	public void doces(){
+		List<Produto> paes= produtoDao.listaProdutoPorCategoria(CategoriaProduto.DOCES);
+		List<List<Produto>> partition = Lists.partition(paes, 2);
+		result.include("partition", partition);
+
+	}
+	
+	@Path("/cupcakes")
+	public void cupcakes(){
+		List<Produto> paes= produtoDao.listaProdutoPorCategoria(CategoriaProduto.CUPCAKES);
+		List<List<Produto>> partition = Lists.partition(paes, 2);
+		result.include("partition", partition);
+
+	}
+	
+	@Path("/lanches")
+	public void lanches(){
+		List<Produto> paes= produtoDao.listaProdutoPorCategoria(CategoriaProduto.LANCHES);
+		List<List<Produto>> partition = Lists.partition(paes, 2);
+		result.include("partition", partition);
+
 	}
 	
 	@Path("/cadastra-produto")
@@ -78,7 +114,7 @@ public class ProdutoController {
 	
 	@Path("/altera-produto")
 	public void altera(String id,String nome, String descricao, String preco, String quantidade,String medida,  String categoria){
-		Produto produto = new Produto();
+		Produto produto = produtoDao.getById(Integer.parseInt(id));
 		produto.setId(Integer.parseInt(id));
 		produto.setCategoria(CategoriaProduto.valueOf(categoria));
 		produto.setDescricao(descricao);
