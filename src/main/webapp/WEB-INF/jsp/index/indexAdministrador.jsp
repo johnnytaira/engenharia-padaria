@@ -21,7 +21,7 @@
 			<div>
 				<a href="formulario-promocao">
 		
-					<img class="circleimg" src="images/20_percent_off.png" height="100"
+					<img class="circleimg" src="images/20_percent_off_new.png" height="100"
 						width="100" alt="Promoção"
 					/>
 				</a>
@@ -31,14 +31,14 @@
 			
 			<div>
 				<a href="formulario">
-					<img class="circleimg" src="images/produtos.jpg" height="100" width="100" 
+					<img class="circleimg" src="images/produtos new.png" height="100" width="100" 
 					alt ="Produto"/>
 				</a>
 				<p>Cadastrar Produto</p>
 			</div>
 		
 			<div>
-				<a href="formulario-promocao">
+				<a href="lista-promocoes">
 		
 					<img class="circleimg" src="images/20_percent_off.png" height="100"
 						width="100" alt="Promoção"
@@ -49,8 +49,8 @@
 			</div>
 			
 			<div>
-				<a href="formulario">
-					<img class="circleimg" src="images/produtos.jpg" height="100" width="100" 
+				<a href="lista">
+					<img class="circleimg" src="images/produtos edit.png" height="100" width="100" 
 					 alt ="Produto"/>
 				</a>
 				

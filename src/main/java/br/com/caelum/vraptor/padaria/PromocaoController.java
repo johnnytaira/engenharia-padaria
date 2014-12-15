@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.joda.time.DateTime;
+
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
@@ -42,7 +44,7 @@ public class PromocaoController {
 	}
 	
 	@Path("/cadastra-promocao")
-	public void cadastra(String idProduto, String novoValor ){
+	public void cadastra(String idProduto, String novoValor, String validoAte ){
 		//FIXME tratamento caso produto seja nulo
 		
 		ProdutoDao produtoDao = new ProdutoDao();
@@ -55,6 +57,7 @@ public class PromocaoController {
 		promocao.setProduto(produto);
 		promocao.setValorAntigo(produto.getPreco());
 		promocao.setNovoValor(Double.parseDouble(novoValor));
+		promocao.setValidoAte(new DateTime(validoAte));
 		promocaoDao.salva(promocao);
 		result.redirectTo(ProdutoController.class).lista();
 	}

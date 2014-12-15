@@ -6,6 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Type;
+import org.joda.time.DateTime;
+
 /**
  * Modelo para promoção. A ideia é que a promoção armazene o preço antigo e o preço novo
  * de um produto, por enquanto. Adiciona promoção, {@link Produto} passa a ter um novo preço,
@@ -27,11 +30,20 @@ public class Promocao {
 	private Double valorAntigo;
 	private Double novoValor;
 	
+	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+	private DateTime validoAte;
+
 	public Promocao(){
 		
 	}
 	
-	
+	public DateTime getValidoAte() {
+		return validoAte;
+	}
+
+	public void setValidoAte(DateTime validoAte) {
+		this.validoAte = validoAte;
+	}
 	
 	public void setProduto (Produto produto){
 		this.produto = produto;
