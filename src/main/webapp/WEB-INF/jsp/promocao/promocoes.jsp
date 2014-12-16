@@ -62,7 +62,7 @@
 							<li class="active"><a href="index.html">Home</a></li>
 							<li><a href="about.html">Quem Somos</a></li>
 							<li><a href="menu.html">Produtos</a></li>
-							<li><a href="services.html">Promoções</a></li>
+							<li><a href="/vraptor-blank-project/promocoes">Promoções</a></li>
 							<li><a href="contact.html">Contato</a></li>
 							<div class="clear"></div>
 						</ul>
