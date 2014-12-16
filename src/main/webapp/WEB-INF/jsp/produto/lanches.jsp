@@ -60,7 +60,7 @@ h2 {
 							<div class="listview_1_of_2 images_1_of_2">
 								<div class="listimg listimg_2_of_1">
 									<a href="#"><img src="<c:url value="${lanche.imagem }"/>"
-										alt="" /><span> R$${lanche.preco }/kg</span></a>
+										alt="" /><span> R$${lanche.preco }</span></a>
 								</div>
 								<div class="text list_2_of_1">
 									<h3>${lanche.nome}</h3>

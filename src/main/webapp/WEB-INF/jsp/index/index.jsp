@@ -49,7 +49,7 @@
 						<li class="active"><a href="/vraptor-blank-project">Inicio</a></li>
 						<li><a href="about.html">Quem Somos</a></li>
 						<li><a href="menu.html">Produtos</a></li>
-						<li><a href="services.html">Serviços</a></li>
+						<li><a href="/vraptor-blank-project/promocoes">Serviços</a></li>
 						<li><a href="contact.html">Contato</a></li>
 						<div class="clear"></div>
 					</ul>

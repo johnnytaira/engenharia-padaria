@@ -16,6 +16,8 @@ import br.com.padaria.dao.PromocaoDao;
 import br.com.padaria.model.Produto;
 import br.com.padaria.model.Promocao;
 
+import com.google.common.collect.Lists;
+
 @Controller
 public class PromocaoController {
 	
@@ -71,6 +73,15 @@ public class PromocaoController {
 		promocaoDao.remove(promocao);
 		result.redirectTo(this).listaPromocoes();
 	}
+	
+	@Path("/promocoes")
+	public void promocoes(){
+		List<Promocao> listPromocoes= promocaoDao.lista();
+		List<List<Promocao>> partition = Lists.partition(listPromocoes, 2);
+		
+		result.include("partition", partition);
+	}
+	
 	@Path("/lista-promocoes")
 	public void listaPromocoes(){
 		List<Promocao> listPromocoes= promocaoDao.lista();

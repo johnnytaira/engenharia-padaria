@@ -53,6 +53,8 @@
         $('#invalid').currency();
     });
     </script>
+    
+    
 
 </body>
 </html>
